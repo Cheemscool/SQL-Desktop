@@ -1,0 +1,11 @@
+>Tutti i Clienti residenti a Londra
+Select * From Clienti
+Where Citta = "Londra"
+
+>Tutti gli ordini recapitati a "QUICK-Stop"
+Select * From Ordini
+Where Destinatario = "QUICK-Stop"
+
+>Tutti i Clienti provenienti dal paese indicato dal parametro
+Select * From Clienti
+Where Paese = "//P1//"
