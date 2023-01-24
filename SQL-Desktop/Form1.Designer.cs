@@ -56,7 +56,7 @@
             this.lblFifthPar = new System.Windows.Forms.Label();
             this.lblExport = new System.Windows.Forms.Label();
             this.cmboxExport = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -326,22 +326,22 @@
             this.cmboxExport.Size = new System.Drawing.Size(175, 25);
             this.cmboxExport.TabIndex = 28;
             // 
-            // button1
+            // btnExport
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(826, 319);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 25);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Esegui";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Location = new System.Drawing.Point(826, 319);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(91, 25);
+            this.btnExport.TabIndex = 29;
+            this.btnExport.Text = "Esporta";
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 705);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.cmboxExport);
             this.Controls.Add(this.lblExport);
             this.Controls.Add(this.txtSixthPar);
@@ -412,6 +412,6 @@
         private Label lblFifthPar;
         private Label lblExport;
         private ComboBox cmboxExport;
-        private Button button1;
+        private Button btnExport;
     }
 }
