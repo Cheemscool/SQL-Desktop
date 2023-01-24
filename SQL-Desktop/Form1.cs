@@ -2,6 +2,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.IO;
+using System.Windows.Forms;
 
 namespace SQL_Desktop
 {
@@ -115,6 +116,14 @@ namespace SQL_Desktop
         {
             var query = (Query)cmboxQuery.SelectedItem;
             if (query != null) { txtSQL.Text = query.Content; }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            StreamWriter html = File.CreateText("example.html");
+            MessageBox.Show("File Creato");
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string filePath = Path.Combine(desktopPath, "example.txt");
         }
     }
  }
