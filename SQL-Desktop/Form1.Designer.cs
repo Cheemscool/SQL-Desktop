@@ -54,6 +54,9 @@
             this.lblSixthPar = new System.Windows.Forms.Label();
             this.txtFifthPar = new System.Windows.Forms.TextBox();
             this.lblFifthPar = new System.Windows.Forms.Label();
+            this.lblExport = new System.Windows.Forms.Label();
+            this.cmboxExport = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +74,7 @@
             // 
             this.lblPathDB.AutoSize = true;
             this.lblPathDB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPathDB.Location = new System.Drawing.Point(61, 77);
+            this.lblPathDB.Location = new System.Drawing.Point(39, 77);
             this.lblPathDB.Name = "lblPathDB";
             this.lblPathDB.Size = new System.Drawing.Size(129, 23);
             this.lblPathDB.TabIndex = 1;
@@ -81,7 +84,7 @@
             // 
             this.lblQueryPath.AutoSize = true;
             this.lblQueryPath.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblQueryPath.Location = new System.Drawing.Point(61, 108);
+            this.lblQueryPath.Location = new System.Drawing.Point(39, 108);
             this.lblQueryPath.Name = "lblQueryPath";
             this.lblQueryPath.Size = new System.Drawing.Size(156, 23);
             this.lblQueryPath.TabIndex = 2;
@@ -91,7 +94,7 @@
             // 
             this.lblSelectQuery.AutoSize = true;
             this.lblSelectQuery.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSelectQuery.Location = new System.Drawing.Point(61, 139);
+            this.lblSelectQuery.Location = new System.Drawing.Point(39, 139);
             this.lblSelectQuery.Name = "lblSelectQuery";
             this.lblSelectQuery.Size = new System.Drawing.Size(70, 23);
             this.lblSelectQuery.TabIndex = 3;
@@ -100,7 +103,7 @@
             // txtPathDB
             // 
             this.txtPathDB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPathDB.Location = new System.Drawing.Point(250, 77);
+            this.txtPathDB.Location = new System.Drawing.Point(228, 77);
             this.txtPathDB.Name = "txtPathDB";
             this.txtPathDB.Size = new System.Drawing.Size(203, 25);
             this.txtPathDB.TabIndex = 4;
@@ -108,7 +111,7 @@
             // txtQueryPath
             // 
             this.txtQueryPath.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtQueryPath.Location = new System.Drawing.Point(250, 108);
+            this.txtQueryPath.Location = new System.Drawing.Point(228, 108);
             this.txtQueryPath.Name = "txtQueryPath";
             this.txtQueryPath.Size = new System.Drawing.Size(203, 25);
             this.txtQueryPath.TabIndex = 5;
@@ -118,7 +121,7 @@
             this.cmboxQuery.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmboxQuery.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxQuery.FormattingEnabled = true;
-            this.cmboxQuery.Location = new System.Drawing.Point(250, 139);
+            this.cmboxQuery.Location = new System.Drawing.Point(228, 139);
             this.cmboxQuery.Name = "cmboxQuery";
             this.cmboxQuery.Size = new System.Drawing.Size(203, 25);
             this.cmboxQuery.TabIndex = 6;
@@ -127,7 +130,7 @@
             // btnPathDb
             // 
             this.btnPathDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPathDb.Location = new System.Drawing.Point(459, 76);
+            this.btnPathDb.Location = new System.Drawing.Point(437, 76);
             this.btnPathDb.Name = "btnPathDb";
             this.btnPathDb.Size = new System.Drawing.Size(29, 29);
             this.btnPathDb.TabIndex = 7;
@@ -138,7 +141,7 @@
             // btnQueryPath
             // 
             this.btnQueryPath.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQueryPath.Location = new System.Drawing.Point(459, 107);
+            this.btnQueryPath.Location = new System.Drawing.Point(437, 107);
             this.btnQueryPath.Name = "btnQueryPath";
             this.btnQueryPath.Size = new System.Drawing.Size(29, 29);
             this.btnQueryPath.TabIndex = 8;
@@ -153,13 +156,13 @@
             this.dataGridViewDB.Name = "dataGridViewDB";
             this.dataGridViewDB.RowHeadersWidth = 51;
             this.dataGridViewDB.RowTemplate.Height = 29;
-            this.dataGridViewDB.Size = new System.Drawing.Size(958, 261);
+            this.dataGridViewDB.Size = new System.Drawing.Size(942, 261);
             this.dataGridViewDB.TabIndex = 9;
             // 
             // btnRun
             // 
             this.btnRun.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRun.Location = new System.Drawing.Point(176, 189);
+            this.btnRun.Location = new System.Drawing.Point(154, 189);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(111, 48);
             this.btnRun.TabIndex = 10;
@@ -169,7 +172,7 @@
             // 
             // txtSQL
             // 
-            this.txtSQL.Location = new System.Drawing.Point(580, 76);
+            this.txtSQL.Location = new System.Drawing.Point(564, 79);
             this.txtSQL.Multiline = true;
             this.txtSQL.Name = "txtSQL";
             this.txtSQL.Size = new System.Drawing.Size(390, 161);
@@ -179,7 +182,7 @@
             // 
             this.lblSQL.AutoSize = true;
             this.lblSQL.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSQL.Location = new System.Drawing.Point(508, 75);
+            this.lblSQL.Location = new System.Drawing.Point(492, 78);
             this.lblSQL.Name = "lblSQL";
             this.lblSQL.Size = new System.Drawing.Size(56, 23);
             this.lblSQL.TabIndex = 12;
@@ -188,7 +191,7 @@
             // txtFirstPar
             // 
             this.txtFirstPar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFirstPar.Location = new System.Drawing.Point(143, 319);
+            this.txtFirstPar.Location = new System.Drawing.Point(121, 319);
             this.txtFirstPar.Name = "txtFirstPar";
             this.txtFirstPar.Size = new System.Drawing.Size(107, 25);
             this.txtFirstPar.TabIndex = 14;
@@ -197,7 +200,7 @@
             // 
             this.lblFirstPar.AutoSize = true;
             this.lblFirstPar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFirstPar.Location = new System.Drawing.Point(96, 317);
+            this.lblFirstPar.Location = new System.Drawing.Point(74, 317);
             this.lblFirstPar.Name = "lblFirstPar";
             this.lblFirstPar.Size = new System.Drawing.Size(27, 23);
             this.lblFirstPar.TabIndex = 13;
@@ -207,7 +210,7 @@
             // 
             this.lblParameters.AutoSize = true;
             this.lblParameters.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblParameters.Location = new System.Drawing.Point(61, 272);
+            this.lblParameters.Location = new System.Drawing.Point(39, 272);
             this.lblParameters.Name = "lblParameters";
             this.lblParameters.Size = new System.Drawing.Size(102, 23);
             this.lblParameters.TabIndex = 15;
@@ -216,7 +219,7 @@
             // txtSecondPar
             // 
             this.txtSecondPar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSecondPar.Location = new System.Drawing.Point(143, 367);
+            this.txtSecondPar.Location = new System.Drawing.Point(121, 367);
             this.txtSecondPar.Name = "txtSecondPar";
             this.txtSecondPar.Size = new System.Drawing.Size(107, 25);
             this.txtSecondPar.TabIndex = 17;
@@ -225,7 +228,7 @@
             // 
             this.lblSecondPar.AutoSize = true;
             this.lblSecondPar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSecondPar.Location = new System.Drawing.Point(96, 365);
+            this.lblSecondPar.Location = new System.Drawing.Point(74, 365);
             this.lblSecondPar.Name = "lblSecondPar";
             this.lblSecondPar.Size = new System.Drawing.Size(27, 23);
             this.lblSecondPar.TabIndex = 16;
@@ -234,7 +237,7 @@
             // txtFourthPar
             // 
             this.txtFourthPar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFourthPar.Location = new System.Drawing.Point(381, 367);
+            this.txtFourthPar.Location = new System.Drawing.Point(293, 367);
             this.txtFourthPar.Name = "txtFourthPar";
             this.txtFourthPar.Size = new System.Drawing.Size(107, 25);
             this.txtFourthPar.TabIndex = 21;
@@ -243,7 +246,7 @@
             // 
             this.lblFourthPar.AutoSize = true;
             this.lblFourthPar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFourthPar.Location = new System.Drawing.Point(334, 365);
+            this.lblFourthPar.Location = new System.Drawing.Point(246, 365);
             this.lblFourthPar.Name = "lblFourthPar";
             this.lblFourthPar.Size = new System.Drawing.Size(27, 23);
             this.lblFourthPar.TabIndex = 20;
@@ -252,7 +255,7 @@
             // txtThirdPar
             // 
             this.txtThirdPar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtThirdPar.Location = new System.Drawing.Point(381, 319);
+            this.txtThirdPar.Location = new System.Drawing.Point(293, 319);
             this.txtThirdPar.Name = "txtThirdPar";
             this.txtThirdPar.Size = new System.Drawing.Size(107, 25);
             this.txtThirdPar.TabIndex = 19;
@@ -261,7 +264,7 @@
             // 
             this.lblThirsPar.AutoSize = true;
             this.lblThirsPar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblThirsPar.Location = new System.Drawing.Point(334, 317);
+            this.lblThirsPar.Location = new System.Drawing.Point(246, 317);
             this.lblThirsPar.Name = "lblThirsPar";
             this.lblThirsPar.Size = new System.Drawing.Size(27, 23);
             this.lblThirsPar.TabIndex = 18;
@@ -270,7 +273,7 @@
             // txtSixthPar
             // 
             this.txtSixthPar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSixthPar.Location = new System.Drawing.Point(637, 367);
+            this.txtSixthPar.Location = new System.Drawing.Point(475, 367);
             this.txtSixthPar.Name = "txtSixthPar";
             this.txtSixthPar.Size = new System.Drawing.Size(107, 25);
             this.txtSixthPar.TabIndex = 25;
@@ -279,7 +282,7 @@
             // 
             this.lblSixthPar.AutoSize = true;
             this.lblSixthPar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSixthPar.Location = new System.Drawing.Point(590, 365);
+            this.lblSixthPar.Location = new System.Drawing.Point(428, 365);
             this.lblSixthPar.Name = "lblSixthPar";
             this.lblSixthPar.Size = new System.Drawing.Size(27, 23);
             this.lblSixthPar.TabIndex = 24;
@@ -288,7 +291,7 @@
             // txtFifthPar
             // 
             this.txtFifthPar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFifthPar.Location = new System.Drawing.Point(637, 319);
+            this.txtFifthPar.Location = new System.Drawing.Point(475, 319);
             this.txtFifthPar.Name = "txtFifthPar";
             this.txtFifthPar.Size = new System.Drawing.Size(107, 25);
             this.txtFifthPar.TabIndex = 23;
@@ -297,17 +300,50 @@
             // 
             this.lblFifthPar.AutoSize = true;
             this.lblFifthPar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFifthPar.Location = new System.Drawing.Point(590, 317);
+            this.lblFifthPar.Location = new System.Drawing.Point(428, 317);
             this.lblFifthPar.Name = "lblFifthPar";
             this.lblFifthPar.Size = new System.Drawing.Size(27, 23);
             this.lblFifthPar.TabIndex = 22;
             this.lblFifthPar.Text = "5:";
             // 
+            // lblExport
+            // 
+            this.lblExport.AutoSize = true;
+            this.lblExport.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblExport.Location = new System.Drawing.Point(607, 272);
+            this.lblExport.Name = "lblExport";
+            this.lblExport.Size = new System.Drawing.Size(85, 23);
+            this.lblExport.TabIndex = 27;
+            this.lblExport.Text = "Esporta:";
+            // 
+            // cmboxExport
+            // 
+            this.cmboxExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmboxExport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboxExport.FormattingEnabled = true;
+            this.cmboxExport.Location = new System.Drawing.Point(645, 319);
+            this.cmboxExport.Name = "cmboxExport";
+            this.cmboxExport.Size = new System.Drawing.Size(175, 25);
+            this.cmboxExport.TabIndex = 28;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(826, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 25);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Esegui";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 705);
+            this.ClientSize = new System.Drawing.Size(963, 705);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmboxExport);
+            this.Controls.Add(this.lblExport);
             this.Controls.Add(this.txtSixthPar);
             this.Controls.Add(this.lblSixthPar);
             this.Controls.Add(this.txtFifthPar);
@@ -374,5 +410,8 @@
         private Label lblSixthPar;
         private TextBox txtFifthPar;
         private Label lblFifthPar;
+        private Label lblExport;
+        private ComboBox cmboxExport;
+        private Button button1;
     }
 }
