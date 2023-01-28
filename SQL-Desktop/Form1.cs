@@ -120,10 +120,12 @@ namespace SQL_Desktop
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            StreamWriter html = File.CreateText("example.html");
-            MessageBox.Show("File Creato");
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string filePath = Path.Combine(desktopPath, "example.txt");
+            HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
+            SaveFileDialog sd = new SaveFileDialog();
+            sd.Filter = "HTML Files|*.html";
+            sd.Title = "Scegli il percorso";
+            sd.FileName = "Database";
+            if (sd.ShowDialog() == DialogResult.OK) html.Save(sd.FileName);
         }
     }
- }
+}
