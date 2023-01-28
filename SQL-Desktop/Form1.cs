@@ -1,8 +1,11 @@
 using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
+using HtmlAgilityPack;
 
 namespace SQL_Desktop
 {
@@ -10,7 +13,7 @@ namespace SQL_Desktop
     {
         #region Start
         List<Query> queries;
-        string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
+        string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style></style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
         public Form1()
         {
             InitializeComponent();
@@ -141,12 +144,20 @@ namespace SQL_Desktop
         private void btnExport_Click(object sender, EventArgs e)
         {
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
+            html.Load(@"default.html");
+
+            /*
+                Creare la table ed inserirla in html
+            */
+
+            File.Delete(@"default.html"); //SOLO PER DEBUG, ELIMINARE NELLA VERSIONE FINALE
+
+            //Salvataggio file HTML
             SaveFileDialog sd = new SaveFileDialog();
             sd.Filter = "HTML Files|*.html";
             sd.Title = "Scegli il percorso";
-            sd.FileName = "Database";
+            sd.FileName = "database";
             if (sd.ShowDialog() == DialogResult.OK) html.Save(sd.FileName);
-            //html.LoadHtml(...);
         }
         #endregion
     }
