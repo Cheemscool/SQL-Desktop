@@ -126,6 +126,7 @@ namespace SQL_Desktop
             sd.Title = "Scegli il percorso";
             sd.FileName = "Database";
             if (sd.ShowDialog() == DialogResult.OK) html.Save(sd.FileName);
+            html.Text = "Test";
         }
     }
 }
