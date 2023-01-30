@@ -6,7 +6,6 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 using HtmlAgilityPack;
-using System.Linq;
 using System.Text;
 
 namespace SQL_Desktop
@@ -198,25 +197,6 @@ namespace SQL_Desktop
                     sfdCSV.Title = "Scegli il percorso";
                     sfdCSV.FileName = "database";
                     if (sfdCSV.ShowDialog() == DialogResult.OK) csvFILE.Save(sfdCSV.FileName);
-                    break;
-                    //foreach (DataColumn column in queryResult.Columns) csv += row. + ',';
-
-
-                    //csv += "\r\n";
-
-
-                    //foreach (DataRow row in dataGridViewDB.Rows)
-                    //{
-                    //    foreach (DataGridViewCell cell in row.Cells) csv += cell.Value.ToString().Replace(",", ";") + ',';
-                    //    csv += "\r\n";
-                    //}
-
-                    //HtmlAgilityPack.HtmlDocument csvFile = new HtmlAgilityPack.HtmlDocument();
-                    //SaveFileDialog sfdCSV = new SaveFileDialog();
-                    //sfdCSV.Filter = "CSV Files|*.csv";
-                    //sfdCSV.Title = "Scegli il percorso";
-                    //sfdCSV.FileName = "database";
-                    //if (sfdCSV.ShowDialog() == DialogResult.OK) csvFile.Save(sfdCSV.FileName);
                     break;
             }
         }
