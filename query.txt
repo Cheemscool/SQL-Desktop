@@ -1,6 +1,6 @@
->Tutti i Clienti residenti a Londra
+>Tutti i Clienti che vivono in Germania
 Select * From Clienti
-Where Citta = "Londra"
+Where Paese = "Germania"
 
 >Tutti gli ordini recapitati a "QUICK-Stop"
 Select * From Ordini

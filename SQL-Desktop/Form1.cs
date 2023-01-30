@@ -129,7 +129,7 @@ namespace SQL_Desktop
         }
         #endregion
 
-        #region Aggiorna la Text Box quando viene scelta un'altra query
+        #region Aggiorna la Text Box quando viene scelta un'altra query dalla combo box
         private void cmboxQuery_SelectedIndexChanged(object sender, EventArgs e)
         {
             var query = (Query)cmboxQuery.SelectedItem;
@@ -137,7 +137,7 @@ namespace SQL_Desktop
         }
         #endregion
 
-        #region Esporta il DB come file HTML
+        #region Esporta il DB come file HTML o CSV
         private void btnExport_Click(object sender, EventArgs e)
         {
             switch (cmboxExport.Text)
@@ -160,7 +160,7 @@ namespace SQL_Desktop
                         table += tr;
                     }
                     table += "</table>";
-                    string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>\r\n@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');\r\n\r\n* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\n}\r\n\r\nbody {\r\nfont-family: 'Lexend', sans-serif;\r\n}\r\n\r\ndiv {\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\n}\r\n\r\ntable {\r\nborder-collapse: collapse;\r\nmargin: 25px 0;\r\nfont-size: 0.9 rem;\r\nmin-width: 400px;\r\nbox-shadow: 0 0 20px rgba(0,0,0,0.15);\r\n}\r\n\r\ntd, tr, th {border: 1px solid black;\r\npadding: 10px 16px;\r\n}\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n<div>\r\n" + table + "\r\n</div>\r\n</body>\r\n</html>";
+                    string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>\r\n@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');\r\n\r\n* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\n}\r\n\r\nbody {\r\nfont-family: 'Lexend', sans-serif;\r\n}\r\n\r\ndiv {\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\n}\r\n\r\ntable {\r\nborder-collapse: collapse;\r\nmargin: 25px 0;\r\nfont-size: 0.9 rem;\r\nmin-width: 400px;\r\nbox-shadow: 0 0 20px rgba(0,0,0,0.15);\r\n}\r\n\r\ntd, th {border: 1px solid black;\r\npadding: 10px 16px;\r\n}\r\n\r\ntr:first-child {\r\nbackground-color: #dddddd;\r\n}\r\n\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n<div>\r\n" + table + "\r\n</div>\r\n</body>\r\n</html>";
                     HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
                     html.LoadHtml(defaultSettings);
 
@@ -171,12 +171,12 @@ namespace SQL_Desktop
                     sfdHTML.FileName = "database";
                     if (sfdHTML.ShowDialog() == DialogResult.OK) html.Save(sfdHTML.FileName);
                     break;
+
                 case "CSV":
-                    //MessageBox.Show("Debug");
-                    
                     string csv = "";
 
-                    foreach (DataColumn col in queryResult.Columns) csv += col.ToString();
+                    foreach (DataColumn col in queryResult.Columns) csv += col.ToString() + ",";
+                    csv = csv.Remove(csv.Length - 1);
                     csv += "\r\n";
                     foreach (DataRow row in queryResult.Rows)
                     {
@@ -185,18 +185,18 @@ namespace SQL_Desktop
                             string value = row[col.ToString()].ToString();
                             csv += $"{value},";
                         }
-                        csv += ";\r\n";
+                        csv = csv.Remove(csv.Length - 1);
+                        csv += "\r\n";
                     }
-                    csv += ";";
 
-                    HtmlAgilityPack.HtmlDocument csvFILE = new HtmlAgilityPack.HtmlDocument();
-                    csvFILE.LoadHtml(csv);
+                    HtmlAgilityPack.HtmlDocument csvFile = new HtmlAgilityPack.HtmlDocument();
+                    csvFile.LoadHtml(csv);
 
                     SaveFileDialog sfdCSV = new SaveFileDialog();
                     sfdCSV.Filter = "CSV Files|*.csv";
                     sfdCSV.Title = "Scegli il percorso";
                     sfdCSV.FileName = "database";
-                    if (sfdCSV.ShowDialog() == DialogResult.OK) csvFILE.Save(sfdCSV.FileName);
+                    if (sfdCSV.ShowDialog() == DialogResult.OK) csvFile.Save(sfdCSV.FileName);
                     break;
             }
         }

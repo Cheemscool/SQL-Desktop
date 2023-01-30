@@ -1,0 +1,11 @@
+IDCliente,contatore,NomeSocieta,Contatto,Posizione,Indirizzo,Citta,Zona,CAP,Paese,Telefono,Fax
+ALFKI,1,Alfreds Futterkiste,Maria Anders,Rappresentante,Obere Str. 57,Berlino,,12209,Germania,030-0074321,030-0076545
+BLAUS,6,Blauer See Delikatessen,Hanna Moos,Rappresentante,Forsterstr. 57,Mannheim,,68306,Germania,0621-08460,0621-08924
+FRANK,25,Frankenversand,Peter Franken,Direttore marketing,Berliner Platz 43,Monaco di B.,,80805,Germania,089-0877310,089-0877451
+KOENE,39,Königlich Essen,Philip Cramer,Venditore,Maubelstr. 90,Brandeburgo,,14776,Germania,0555-09876,
+LEHMS,44,Lehmanns Marktstand,Renate Messner,Rappresentante,Magazinweg 7,Francoforte,,60528,Germania,069-0245984,069-0245874
+MORGK,52,Morgenstern Gesundkost,Alexander Feuer,Funzionario marketing,Heerstr. 22,Lipsia,,04179,Germania,0342-023176,
+OTTIK,56,Ottilies Käseladen,Henriette Pfalzheim,Titolare,Mehrheimerstr. 369,Colonia,,50739,Germania,0221-0644327,0221-0765721
+QUICK,63,QUICK-Stop,Horst Kloss,Direttore amministrativo,Taucherstraße 10,Cunewalde,,01307,Germania,0372-035188,
+TOMSP,79,Toms Spezialitäten,Karin Josephs,Direttore marketing,Luisenstr. 48,Münster,,44087,Germania,0251-031259,0251-035695
+WANDK,86,Die Wandernde Kuh,Rita Müller,Rappresentante,Adenauerallee 900,Stoccarda,,70563,Germania,0711-020361,0711-035428
