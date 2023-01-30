@@ -76,6 +76,7 @@ namespace SQL_Desktop
 
             DataTable dt = new DataTable();
             SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(queryContent, connectionString);
+            queryResult = dt;
 
             try
             {
@@ -137,31 +138,40 @@ namespace SQL_Desktop
         #region Esporta il DB come file HTML
         private void btnExport_Click(object sender, EventArgs e)
         {
-            //string tableTag = "<table>";
-            //foreach (DataRow row in queryResult.Rows)
-            //{
-            //    string tr = "<tr>";
-            //    foreach (DataColumn column_ in queryResult.Columns)
-            //    {
-            //        string val = row[column_.ToString()].ToString();
-            //        string th = $"<th>{val}</th>";
-            //        tr += th;
-            //    }
-            //fare metodo che passa il datatable in modo che crea il proprio html
-            //    tr += "</tr>";
-            //    tableTag += tr;
-            //}
-            //tableTag += "</table>";
-            string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\nbackground: black;\r\ncolor: white;\r\n}\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
-            HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
-            html.LoadHtml(defaultSettings);
+            switch (cmboxExport.Text)
+            {
+                case "HTML":
+                    string table = "<table>";
+                    string tr = "";
+                    foreach (DataColumn col in queryResult.Columns) tr += "<th>" + col.ToString() + "</th>";
+                    table += tr;
+                    foreach (DataRow row in queryResult.Rows)
+                    {
+                        tr = "<tr>";
+                        foreach (DataColumn col in queryResult.Columns)
+                        {
+                            string value = row[col.ToString()].ToString();
+                            string th = $"<th>{value}</th>";
+                            tr += th;
+                        }
+                        tr += "</tr>";
+                        table += tr;
+                    }
+                    table += "</table>";
+                    string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>\r\n@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');\r\n\r\n* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\n}\r\n\r\nbody {\r\nfont-family: 'Lexend', sans-serif;\r\n}\r\n\r\ndiv {\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\n}\r\n\r\ntable {\r\nborder-collapse: collapse;\r\nmargin: 25px 0;\r\nfont-size: 0.9 rem;\r\nmin-width: 400px;\r\nbox-shadow: 0 0 20px rgba(0,0,0,0.15);\r\n}\r\n\r\nth {\r\nbackgrond: grey;\r\n}\r\n\r\ntd, tr, th {border: 1px solid black;\r\npadding: 10px 16px;\r\n}\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n<div>\r\n" + table + "\r\n</div>\r\n</body>\r\n</html>";
+                    HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
+                    html.LoadHtml(defaultSettings);
 
-            //Salvataggio file HTML
-            SaveFileDialog sd = new SaveFileDialog();
-            sd.Filter = "HTML Files|*.html";
-            sd.Title = "Scegli il percorso";
-            sd.FileName = "database";
-            if (sd.ShowDialog() == DialogResult.OK) html.Save(sd.FileName);
+                    //Salvataggio file HTML
+                    SaveFileDialog sfd = new SaveFileDialog();
+                    sfd.Filter = "HTML Files|*.html";
+                    sfd.Title = "Scegli il percorso";
+                    sfd.FileName = "database";
+                    if (sfd.ShowDialog() == DialogResult.OK) html.Save(sfd.FileName);
+                    break;
+                case "CSV":
+                    break;
+            }
         }
         #endregion
     }

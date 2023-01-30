@@ -321,6 +321,9 @@
             this.cmboxExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmboxExport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboxExport.FormattingEnabled = true;
+            this.cmboxExport.Items.AddRange(new object[] {
+            "HTML",
+            "CSV"});
             this.cmboxExport.Location = new System.Drawing.Point(645, 319);
             this.cmboxExport.Name = "cmboxExport";
             this.cmboxExport.Size = new System.Drawing.Size(175, 25);
