@@ -152,7 +152,7 @@ namespace SQL_Desktop
             //    tableTag += tr;
             //}
             //tableTag += "</table>";
-            string defaultSettings = $"<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\nbackground: black;\r\ncolor: white;\r\n}\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
+            string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\nbackground: black;\r\ncolor: white;\r\n}\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
             html.LoadHtml(defaultSettings);
 
