@@ -18,6 +18,7 @@ namespace SQL_Desktop
         {
             InitializeComponent();
             queries = new List<Query>();
+            cmboxExport.DataSource = cmboxExport.Items;
         }
         #endregion
 
@@ -170,6 +171,7 @@ namespace SQL_Desktop
                     if (sfd.ShowDialog() == DialogResult.OK) html.Save(sfd.FileName);
                     break;
                 case "CSV":
+                    MessageBox.Show("Not now");
                     break;
             }
         }
