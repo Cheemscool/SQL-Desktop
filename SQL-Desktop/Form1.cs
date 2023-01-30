@@ -13,17 +13,11 @@ namespace SQL_Desktop
     {
         #region Start
         List<Query> queries;
-        string defaultSettings = "<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style></style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
+        DataTable queryResult;
         public Form1()
         {
             InitializeComponent();
             queries = new List<Query>();
-            if (!File.Exists("default.html"))
-            {
-                StreamWriter sr = new StreamWriter("default.html");
-                sr.WriteLine(defaultSettings);
-                sr.Close();
-            }
         }
         #endregion
 
@@ -143,14 +137,24 @@ namespace SQL_Desktop
         #region Esporta il DB come file HTML
         private void btnExport_Click(object sender, EventArgs e)
         {
+            //string tableTag = "<table>";
+            //foreach (DataRow row in queryResult.Rows)
+            //{
+            //    string tr = "<tr>";
+            //    foreach (DataColumn column_ in queryResult.Columns)
+            //    {
+            //        string val = row[column_.ToString()].ToString();
+            //        string th = $"<th>{val}</th>";
+            //        tr += th;
+            //    }
+            //fare metodo che passa il datatable in modo che crea il proprio html
+            //    tr += "</tr>";
+            //    tableTag += tr;
+            //}
+            //tableTag += "</table>";
+            string defaultSettings = $"<!DOCTYPE html>\r\n<html lang='it'>\r\n<head>\r\n<meta charset='UTF-8'>\r\n<style>* {\r\nmargin: 0px;\r\npadding: 0px;\r\nbox-sizing: border-box;\r\nbackground: black;\r\ncolor: white;\r\n}\r\n</style>\r\n<title>SQLite Database</title>\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>";
             HtmlAgilityPack.HtmlDocument html = new HtmlAgilityPack.HtmlDocument();
-            html.Load(@"default.html");
-
-            /*
-                Creare la table ed inserirla in html
-            */
-
-            File.Delete(@"default.html"); //SOLO PER DEBUG, ELIMINARE NELLA VERSIONE FINALE
+            html.LoadHtml(defaultSettings);
 
             //Salvataggio file HTML
             SaveFileDialog sd = new SaveFileDialog();
